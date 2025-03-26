@@ -83,13 +83,13 @@ fun FuelNavigation() {
                 .padding(innerPadding)){
             composable(AppScreens.HomeScreen.name) {
 
-                HomeScreen(navController = navController, heroViewModel)
+                HomeScreen(navController = navController, fuelViewModel)
             }
             composable(AppScreens.DetailScreen.name +"/{name}",
                 arguments = listOf(navArgument(name = "name"){type = NavType.StringType})){
                     backStackEntry ->
                 DetailsScreen(
-                    navController = navController,heroViewModel,
+                    navController = navController,fuelViewModel,
                     backStackEntry . arguments ?. getString ("name"),
                 )
 
